@@ -8,7 +8,14 @@ var taskFormHandler = function(event) {
     event.preventDefault();
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
+    
+    //check if values are empty strings
+    if(!taskTypeInput || !taskTypeInput) {
+        alert("You need the fill out the task form!");
+        return false;
+    }
 
+    formEl.reset();
     //package data as object
     var taskDataObj = {
         name: taskNameInput,
@@ -40,7 +47,6 @@ var createTaskEl = function(taskDataObj) {
 
 formEl.addEventListener("submit", taskFormHandler);
 
-https://courses.bootcampspot.com/courses/314/pages/4-dot-2-7-refactor-the-code-to-organize-functionality?module_item_id=102239
 
 
 
